@@ -1,0 +1,28 @@
+<html>
+<head>Search</head>
+<body>
+<form action="{% url 'search'%}" method="POST">
+    {% csrf_token %}
+<ul><input type="text" name ="record_search" required></ul>
+<input type="submit" value="search" name= "search">
+</form>
+<h1>THIS IS RESULT PAGE</h1>
+{% if value %}
+    {% for record in value %}
+      {{record.first_name}}
+      {{record.last_name}}
+      {{record.email}}  
+    
+    {% endfor %}
+
+{% endif %}
+
+
+
+
+
+
+
+
+</body>
+</html>
